@@ -114,7 +114,6 @@ const people = fetch("https://swapi.py4e.com/api/people")
  .then((people) => {
 
         const data = people.results;
-        const id = v4();
 
         const People = data.map(item => {
             return {
