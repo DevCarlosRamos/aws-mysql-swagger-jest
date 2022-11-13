@@ -4,7 +4,10 @@ const getPeoples = async (req, res) => {
     try {
         const db = await connection();
         const [rows] = await db.query("select * from people");
-        return res.status(200).json(rows);
+        return res.status(200).json({
+            rows,
+            ...req.body
+        });
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }

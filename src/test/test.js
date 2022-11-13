@@ -12,7 +12,7 @@ describe("GET /peoples", () => {
     });
     test("deberia de responer un array", async () => {
         const response = await request(app).get("/peoples").send();
-        expect(response.body).toBeInstanceOf(Array);
+        expect(response.body).toBeInstanceOf(Object);
     });
 
 });

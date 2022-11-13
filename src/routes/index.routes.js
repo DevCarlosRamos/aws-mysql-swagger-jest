@@ -1,6 +1,6 @@
 const express = require("express");
 const { getPeoples, getPeople, createPeople, updatePeople, removePeople } = require("../controllers/index.controllers");
-
+const swapi = require('../middleware/middleware')
 const routerPeoples = express.Router();
 
 /**
@@ -121,7 +121,7 @@ const routerPeoples = express.Router();
  *      500:
  *        description: algun error del server
  */
-routerPeoples.get("/peoples", getPeoples);
+routerPeoples.get("/peoples", swapi, getPeoples);
 
 /**
  * @swagger
